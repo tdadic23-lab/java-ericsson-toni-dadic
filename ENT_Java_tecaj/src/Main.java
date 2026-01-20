@@ -1,23 +1,36 @@
+import java.util.Scanner;
+
 public class Main {
     public static void main(String[] args){
-        printArmstrongNumbers();
+        characterCounter();
     }
 
-    public static void printArmstrongNumbers(){
-        for(int i = 1; i < 10000; i++){
-            int sum = 0;
-            int temp = i;
+    public static void characterCounter(){
 
-            while (temp > 0){
-                int digit = temp % 10;
-                sum += digit * digit * digit;
-                temp /= 10;
-            }
+        System.out.print("Unesi string: ");
+        Scanner scanner = new Scanner(System.in);
+        String string = scanner.nextLine();
 
-            if(sum == i){
-                System.out.println(i);
+        int letters = 0;
+        int digits = 0;
+        int others = 0;
+
+        for (int i = 0; i < string.length(); i++){
+            char c = string.charAt(i);
+
+            if (Character.isLetter(c)){
+                letters++;
+            } else if (Character.isDigit(c)){
+                digits++;
+            } else {
+                others++;
             }
         }
+
+        System.out.printf("Slova: %d%n", letters);
+        System.out.printf("Brojevi: %d%n", digits);
+        System.out.printf("Ostali znakovi: %d%n", others);
+
     }
 }
 
