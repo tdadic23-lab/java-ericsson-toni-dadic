@@ -1,23 +1,30 @@
+import java.util.Scanner;
+
 public class Main {
     public static void main(String[] args){
-        printArmstrongNumbers();
+        reversewords();
     }
 
-    public static void printArmstrongNumbers(){
-        for(int i = 1; i < 10000; i++){
-            int sum = 0;
-            int temp = i;
+    public static void reversewords(){
 
-            while (temp > 0){
-                int digit = temp % 10;
-                sum += digit * digit * digit;
-                temp /= 10;
-            }
+        System.out.println("Unesi rečenicu: ");
 
-            if(sum == i){
-                System.out.println(i);
+        Scanner scanner = new Scanner(System.in);
+        String input = scanner.nextLine();
+
+        String[] words = input.trim().split("\\s+");
+
+        StringBuilder stringBuilder = new StringBuilder();
+
+        for (int i = words.length -1; i >= 0; i--){
+            stringBuilder.append(words[i]);
+
+            if (i > 0){
+                stringBuilder.append(" ");
             }
         }
+
+        System.out.println(stringBuilder);
     }
 }
 
