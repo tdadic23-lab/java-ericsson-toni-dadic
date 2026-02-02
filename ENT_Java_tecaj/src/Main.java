@@ -2,14 +2,15 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args){
-        cashBack();
+        Scanner scanner = new Scanner(System.in);
+        cashBack(scanner);
+        scanner.close();
     }
 
-    public static void cashBack(){
+    public static void cashBack(Scanner scanner){
 
         System.out.print("Unesite iznos za povrat: ");
-
-        Scanner scanner = new Scanner(System.in);
+        
         double amount = scanner.nextDouble();
 
         int cents = (int) Math.round(amount * 100);
@@ -25,7 +26,7 @@ public class Main {
             int count = cents / valuesInCents[i];
 
             if (count > 0){
-                System.out.println(count + " * " + printValues[i]);
+                System.out.printf("%d × %.2f €%n", count, printValues[i]);
                 cents = cents % valuesInCents[i];
             }
         }
