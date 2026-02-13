@@ -1,10 +1,11 @@
-public class Triangle {
+public class Triangle extends GeometricFigure{
 
-    private double a;
-    private double b;
-    private double c;
+    private final double a;
+    private final double b;
+    private final double c;
 
     public Triangle(double a, double b, double c) {
+        super("Triangle");
         this.a = a;
         this.b = b;
         this.c = c;
@@ -20,5 +21,22 @@ public class Triangle {
 
     public double getC() {
         return c;
+    }
+
+    @Override
+    public double surface() {
+        double s = (a + b + c) / 2;
+        return Math.sqrt(s * (s - a) * (s - b) * (s - c));
+
+    }
+
+    @Override
+    public double perimeter() {
+        return a + b + c;
+    }
+
+    @Override
+    public String toString() {
+        return "Triangle(a=" + a + ", b=" + b + ", c=" + c + ")";
     }
 }

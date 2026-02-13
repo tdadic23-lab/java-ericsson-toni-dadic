@@ -1,9 +1,10 @@
-public class Rectangle {
+public class Rectangle extends GeometricFigure{
 
-    private double a;
-    private double b;
+    private final double a;
+    private final double b;
 
     public Rectangle(double a, double b) {
+        super("Rectangle");
         this.a = a;
         this.b = b;
     }
@@ -16,4 +17,18 @@ public class Rectangle {
         return b;
     }
 
+    @Override
+    public double surface() {
+        return a * b;
+    }
+
+    @Override
+    public double perimeter() {
+        return ((2*a) + (2*b));
+    }
+
+    @Override
+    public String toString() {
+        return "Rectangle(a=" + a + ", b=" + b + ")";
+    }
 }
