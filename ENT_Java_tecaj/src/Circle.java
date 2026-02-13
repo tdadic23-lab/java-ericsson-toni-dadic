@@ -20,9 +20,9 @@ public class Circle extends GeometricFigure{
     public double perimeter() {
         return Math.PI * 2 * r;
     }
-
+/*
     @Override
     public String toString() {
         return "Circle(r=" + r + ")";
-    }
+    }*/
 }

@@ -13,4 +13,9 @@ public abstract class GeometricFigure {
     public abstract double surface();
     public abstract double perimeter();
 
+    @Override
+    public String toString() {
+        return String.format("%s [površina=%.2f, opseg=%.2f]", type, surface(), perimeter());
+    }
+
 }

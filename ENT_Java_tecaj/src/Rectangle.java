@@ -26,9 +26,9 @@ public class Rectangle extends GeometricFigure{
     public double perimeter() {
         return ((2*a) + (2*b));
     }
-
+/*
     @Override
     public String toString() {
         return "Rectangle(a=" + a + ", b=" + b + ")";
-    }
+    }*/
 }
