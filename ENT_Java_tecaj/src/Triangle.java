@@ -27,16 +27,10 @@ public class Triangle extends GeometricFigure{
     public double surface() {
         double s = (a + b + c) / 2;
         return Math.sqrt(s * (s - a) * (s - b) * (s - c));
-
     }
 
     @Override
     public double perimeter() {
         return a + b + c;
     }
-/*
-    @Override
-    public String toString() {
-        return "Triangle(a=" + a + ", b=" + b + ", c=" + c + ")";
-    }*/
 }

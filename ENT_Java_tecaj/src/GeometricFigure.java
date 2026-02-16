@@ -1,4 +1,6 @@
-public abstract class GeometricFigure {
+import java.util.ArrayList;
+
+public abstract class GeometricFigure implements Comparable<GeometricFigure>{
 
     private final String type;
 
@@ -18,4 +20,8 @@ public abstract class GeometricFigure {
         return String.format("%s [površina=%.2f, opseg=%.2f]", type, surface(), perimeter());
     }
 
+    @Override
+    public int compareTo(GeometricFigure other) {
+        return Double.compare(this.surface(), other.surface());
+    }
 }
